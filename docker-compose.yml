@@ -4,3 +4,12 @@ php5:
         - ./data/:/var/www/html/
     ports:
         - "80"
+ha:
+    image: tutum/haproxy
+    links: 
+        - php5
+    ports:
+        - "80:80"
+    environment:
+        - BACKEND_PORT=80
+        - BALANCE=roundrobin
