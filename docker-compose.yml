@@ -1,0 +1,6 @@
+php5:
+    image: apache:php5
+    volumes:
+        - ./data/:/var/www/html/
+    ports:
+        - "80"
